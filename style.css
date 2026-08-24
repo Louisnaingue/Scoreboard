@@ -1,0 +1,1191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.club-fest-logo {
+  width: 560px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background: #ffffff;
+
+  color: #ffffff;
+
+  min-height: 100vh;
+
+}
+/* =====================================================
+   NAVIGATION IMAGE
+===================================================== */
+
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-banner {
+
+  width: 100%;
+
+  background: #000000;
+
+  padding:
+    0
+    10px
+    8px;
+
+}
+
+
+.banner-accent {
+  width: 100%;
+  height: 32px;
+
+  background: #f2b900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #b50000;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.banner-accent p {
+  margin: 0;
+}
+
+
+.banner-content {
+
+  width: 100%;
+
+  min-height: 110px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding:
+    12px
+    20px;
+
+  background: #000000;
+
+}
+
+
+/* =====================================================
+   TROPHY
+===================================================== */
+
+.trophy-box {
+
+  width: 70px;
+
+  height: 70px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8d75c,
+      #dba900
+    );
+
+  border-radius: 8px;
+
+  font-size: 45px;
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title-area {
+
+  flex:
+    0 0
+    300px;
+
+}
+
+
+.title-area h1 {
+
+  color: #ffffff;
+
+  font-size: 40px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+}
+
+
+.subtitle {
+
+  margin-top: 10px;
+
+  color: #e7b600;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   HEADER STATISTICS
+===================================================== */
+
+.stats {
+
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: center;
+
+}
+
+
+.stat {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 0;
+
+}
+
+
+.stat strong {
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  max-width: 100%;
+
+}
+
+
+.stat span {
+
+  margin-top: 9px;
+
+  color: #527492;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+}
+
+
+.members-stat strong {
+
+  color: #f2b900;
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container {
+
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding:
+    30px
+    20px
+    25px;
+
+}
+
+
+/* =====================================================
+   TOP 3 PODIUM
+===================================================== */
+
+.podium {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-end;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+
+}
+
+
+.podium-wrapper {
+
+  width: 30%;
+
+  max-width: 260px;
+
+  position: relative;
+
+  border-radius:
+    35px
+    35px
+    30px
+    30px;
+
+  padding-bottom: 12px;
+
+}
+
+
+.podium-wrapper.rank-1 {
+
+  height: 300px;
+
+  background: #f2b900;
+
+}
+
+
+.podium-wrapper.rank-2 {
+
+  height: 285px;
+
+  background: #ff7020;
+
+}
+
+
+.podium-wrapper.rank-3 {
+
+  height: 285px;
+
+  background: #e77d88;
+
+}
+
+
+/* =====================================================
+   PODIUM CARD
+===================================================== */
+
+.podium-card {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+
+  background: #000000;
+
+  border-radius:
+    35px
+    35px
+    30px
+    30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  padding:
+    25px
+    20px
+    10px;
+
+  text-align: center;
+
+}
+
+
+/* =====================================================
+   PODIUM NUMBER
+===================================================== */
+
+.rank-number {
+
+  font-family:
+    "Bebas Neue",
+    sans-serif;
+
+  color: #f2b900;
+
+  font-size: 70px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   PODIUM FLAG
+===================================================== */
+
+.podium-flag {
+
+  margin-top: 5px;
+
+  font-size: 52px;
+
+  line-height: 1;
+
+  min-height: 55px;
+
+}
+
+
+/* =====================================================
+   PODIUM CLUB
+===================================================== */
+
+.podium-club {
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+}
+
+
+/* =====================================================
+   PODIUM INFORMATION
+===================================================== */
+
+.podium-info {
+
+  width: 100%;
+
+  margin-top: auto;
+
+}
+
+
+.podium-members {
+
+  margin-top: 8px;
+
+  color: #ffffff;
+
+  font-size: 32px;
+
+  font-weight: 900;
+
+}
+
+
+.podium-members span {
+
+  color: #9c9c9c;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   FOUR COLUMN LEADERBOARD
+===================================================== */
+
+.leaderboard-section {
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 18px;
+
+  align-items: start;
+
+}
+
+
+.leaderboard-column {
+
+  width: 100%;
+
+  min-width: 0;
+
+}
+
+
+/* =====================================================
+   COLUMN HEADER
+===================================================== */
+
+.column-header {
+
+  width: 100%;
+
+  height: 36px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    75px;
+
+  background: #000000;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+}
+
+
+.column-header span {
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    0
+    10px;
+
+  min-width: 0;
+
+}
+
+
+.column-header span:last-child {
+
+  justify-content: center;
+
+  padding: 0;
+
+  background: #f2b900;
+
+  color: #000000;
+
+}
+
+
+/* =====================================================
+   CLUB LIST
+===================================================== */
+
+.club-list {
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-top: 7px;
+
+}
+
+
+/* =====================================================
+   CLUB ROW
+===================================================== */
+
+.club-item {
+
+  width: 100%;
+
+  min-height: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    30px
+    34px
+    minmax(0, 1fr)
+    65px;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      110deg,
+      #00391a 0%,
+      #0d0e0d 100%
+    );
+
+  color: #ffffff;
+
+  padding:
+    0
+    9px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  border-radius: 3px;
+
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+
+}
+
+
+.club-item:hover {
+
+  transform:
+    translateX(3px);
+
+  filter:
+    brightness(1.15);
+
+}
+
+
+/* =====================================================
+   RANK
+===================================================== */
+
+.rank-num {
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  text-align: left;
+
+}
+
+
+/* =====================================================
+   FLAG
+===================================================== */
+
+.club-flag {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+}
+
+
+/* =====================================================
+   CLUB NAME
+===================================================== */
+
+.club-name-list {
+
+  min-width: 0;
+
+  color: #ffffff;
+
+  padding-right: 7px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+}
+
+
+/* =====================================================
+   MEMBER COUNT
+===================================================== */
+
+.member-count {
+
+  color: #ffffff;
+
+  text-align: right;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   GRADIENT RANKING COLORS
+===================================================== */
+
+/* #4 */
+
+.club-item.rank-4 {
+
+  background:
+    linear-gradient(
+      110deg,
+      #00391a 0%,
+      #0d0e0d 100%
+    );
+
+}
+
+
+/* #5 */
+
+.club-item.rank-5 {
+
+  background:
+    linear-gradient(
+      110deg,
+      #064d28 0%,
+      #0d0e0d 100%
+    );
+
+}
+
+
+/* #6 */
+
+.club-item.rank-6 {
+
+  background:
+    linear-gradient(
+      110deg,
+      #0a6334 0%,
+      #0d0e0d 100%
+    );
+
+}
+
+
+/* #7 onward */
+
+.club-item.rank-other {
+
+  background:
+    linear-gradient(
+      110deg,
+      #00391a 0%,
+      #0d0e0d 100%
+    );
+
+}
+
+
+/* =====================================================
+   LAST UPDATED
+===================================================== */
+
+.updated {
+
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #777777;
+
+  font-size: 13px;
+
+}
+
+
+.updated span {
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+  width: 100%;
+
+  padding: 15px;
+
+  text-align: center;
+
+  color: #555555;
+
+  background: #f5f5f5;
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error {
+
+  width: 100%;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #b00020;
+
+  background: #f5f5f5;
+
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+
+  .container {
+
+    max-width: 1600px;
+
+  }
+
+  .leaderboard-section {
+
+    gap: 22px;
+
+  }
+
+  .club-item {
+
+    min-height: 40px;
+
+    font-size: 14px;
+
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .banner-content {
+
+    gap: 15px;
+
+  }
+
+  .title-area {
+
+    flex:
+      0 0
+      230px;
+
+  }
+
+  .title-area h1 {
+
+    font-size: 30px;
+
+  }
+
+  .subtitle {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .stats {
+
+    gap: 8px;
+
+  }
+
+  .stat strong {
+
+    font-size: 25px;
+
+  }
+
+  .stat span {
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+  }
+
+  .leaderboard-section {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 20px;
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .banner-content {
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    padding:
+      20px
+      15px;
+
+    text-align: center;
+
+  }
+
+  .trophy-box {
+
+    width: 75px;
+
+    height: 75px;
+
+    font-size: 38px;
+
+  }
+
+  .title-area {
+
+    flex: none;
+
+    width: 100%;
+
+  }
+
+  .title-area h1 {
+
+    font-size: 30px;
+
+  }
+
+  .subtitle {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    white-space: normal;
+
+  }
+
+  .stats {
+
+    width: 100%;
+
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+    gap:
+      20px
+      10px;
+
+  }
+
+  .stat strong {
+
+    font-size: 23px;
+
+  }
+
+  .stat span {
+
+    font-size: 8px;
+
+  }
+
+  .container {
+
+    padding:
+      25px
+      12px;
+
+  }
+
+  .podium {
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+
+  }
+
+  .podium-wrapper {
+
+    width: 100%;
+
+    max-width: 380px;
+
+    height: 240px !important;
+
+  }
+
+  .podium-wrapper.rank-1 {
+
+    order: 1;
+
+  }
+
+  .podium-wrapper.rank-2 {
+
+    order: 2;
+
+  }
+
+  .podium-wrapper.rank-3 {
+
+    order: 3;
+
+  }
+
+  .leaderboard-section {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .banner-accent {
+
+    height: 15px;
+
+  }
+
+  .title-area h1 {
+
+    font-size: 26px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .subtitle {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+  }
+
+  .stat strong {
+
+    font-size: 20px;
+
+  }
+
+  .stat span {
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+  }
+
+  .podium-wrapper {
+
+    max-width: 100%;
+
+  }
+
+  .podium-club {
+
+    font-size: 20px;
+
+  }
+
+  .podium-members {
+
+    font-size: 19px;
+
+  }
+
+  .podium-flag {
+
+    font-size: 44px;
+
+  }
+
+  .club-item {
+
+    grid-template-columns:
+      28px
+      32px
+      minmax(
+        0,
+        1fr
+      )
+      58px;
+
+  }
+
+  .club-flag {
+
+    font-size: 19px;
+
+  }
+
+  .leaderboard-section {
+
+    gap: 20px;
+
+  }
+
+}

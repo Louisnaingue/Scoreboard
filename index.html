@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Club Fest Membership Scoreboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       HEADER
+  =========================================== -->
+
+  <header class="top-banner">
+
+    <div class="banner-accent">
+      <p>Live Membership Scoreboard</p>
+    </div>
+
+    <div class="banner-content">
+
+      <!-- Trophy -->
+      <div class="trophy-box">
+        🏆
+      </div>
+
+      <!-- Title -->
+      <div class="title-area">
+
+        <img src="Head.png" alt="Club Fest Logo" class="club-fest-logo">
+
+      </div>
+
+      <!-- Statistics -->
+      <div class="stats">
+
+        <div class="stat">
+          <strong id="totalClubs">--</strong>
+          <span>TOTAL CLUBS</span>
+        </div>
+
+        <div class="stat members-stat">
+          <strong id="totalMembers">--</strong>
+          <span>TOTAL MEMBERS</span>
+        </div>
+
+        <div class="stat">
+          <strong id="leadingClub">--</strong>
+          <span>LEADING CLUB</span>
+        </div>
+
+        <div class="stat">
+          <strong id="headerTime">--:--:--</strong>
+          <span>LAST UPDATE</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  
+  
+
+
+  <!-- ==========================================
+       MAIN
+  =========================================== -->
+
+  <main class="container">
+
+    
+
+
+    <!-- ========================================
+         TOP 3 PODIUM
+    ========================================= -->
+
+    <section id="podium" class="podium">
+
+
+      <!-- ================= RANK 2 ================= -->
+
+      <div class="podium-wrapper rank-2">
+
+        <div class="podium-card">
+
+          <div class="rank-number">
+            2
+          </div>
+
+          <div
+            class="podium-flag"
+            id="rank2Flag">
+            🌐
+          </div>
+
+          <div
+            class="podium-club"
+            id="rank2Club">
+            Club Name
+          </div>
+
+          <div class="podium-info">
+
+            <div
+              class="podium-members"
+              id="rank2Members">
+
+              00
+              <span>MEMBERS</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= RANK 1 ================= -->
+
+      <div class="podium-wrapper rank-1">
+
+        <div class="podium-card">
+
+          <div class="rank-number">
+            1
+          </div>
+
+          <div
+            class="podium-flag"
+            id="rank1Flag">
+            🌐
+          </div>
+
+          <div
+            class="podium-club"
+            id="rank1Club">
+            Club Name
+          </div>
+
+          <div class="podium-info">
+
+            <div
+              class="podium-members"
+              id="rank1Members">
+
+              00
+              <span>MEMBERS</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= RANK 3 ================= -->
+
+      <div class="podium-wrapper rank-3">
+
+        <div class="podium-card">
+
+          <div class="rank-number">
+            3
+          </div>
+
+          <div
+            class="podium-flag"
+            id="rank3Flag">
+            🌐
+          </div>
+
+          <div
+            class="podium-club"
+            id="rank3Club">
+            Club Name
+          </div>
+
+          <div class="podium-info">
+
+            <div
+              class="podium-members"
+              id="rank3Members">
+
+              00
+              <span>MEMBERS</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+    
+    <!-- ==========================================
+         RANK 4+
+    =========================================== -->
+
+    <section class="leaderboard-section">
+
+
+      <!-- COLUMN 1 -->
+
+      <div class="leaderboard-column">
+
+        <div class="column-header">
+
+          <span>CLUB</span>
+          <span>MEMBERS</span>
+
+        </div>
+
+        <div
+          id="column1"
+          class="club-list">
+        </div>
+
+      </div>
+
+
+      <!-- COLUMN 2 -->
+
+      <div class="leaderboard-column">
+
+        <div class="column-header">
+
+          <span>CLUB</span>
+          <span>MEMBERS</span>
+
+        </div>
+
+        <div
+          id="column2"
+          class="club-list">
+        </div>
+
+      </div>
+
+
+      <!-- COLUMN 3 -->
+
+      <div class="leaderboard-column">
+
+        <div class="column-header">
+
+          <span>CLUB</span>
+          <span>MEMBERS</span>
+
+        </div>
+
+        <div
+          id="column3"
+          class="club-list">
+        </div>
+
+      </div>
+
+
+      <!-- COLUMN 4 -->
+
+      <div class="leaderboard-column">
+
+        <div class="column-header">
+
+          <span>CLUB</span>
+          <span>MEMBERS</span>
+
+        </div>
+
+        <div
+          id="column4"
+          class="club-list">
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ==========================================
+         LAST UPDATED
+    =========================================== -->
+
+    <div class="updated">
+
+      Last updated:
+      <span id="lastUpdated">
+        Loading...
+      </span>
+
+    </div>
+
+
+  </main>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
