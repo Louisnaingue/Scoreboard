@@ -164,7 +164,7 @@ function displayLeaderboard(clubs) {
 
 
   // ==========================================
-  // TOP 3
+  // TOP 3 PODIUM
   // ==========================================
 
   updatePodium(
@@ -212,7 +212,9 @@ function displayLeaderboard(clubs) {
     );
 
 
-  // Clear columns
+  // ==========================================
+  // CLEAR COLUMNS
+  // ==========================================
 
   [
     column1,
@@ -388,15 +390,40 @@ function updatePodium(
 
 
   // ==========================================
-  // FLAG
+  // FLAG / CLUB-SPECIFIC IMAGE
+  // PODIUM #1, #2, #3
   // ==========================================
 
   if (flagElement) {
 
-    flagElement.textContent =
-      countryCodeToFlag(
-        club.flag
+    const clubImage =
+      getClubImage(
+        club
       );
+
+
+    if (clubImage) {
+
+      flagElement.innerHTML = `
+        <img
+          src="${clubImage}"
+          class="podium-club-specific-image"
+          alt="${escapeHTML(
+            getClubName(club)
+          )}"
+        >
+      `;
+
+    }
+
+    else {
+
+      flagElement.textContent =
+        countryCodeToFlag(
+          club.flag
+        );
+
+    }
 
   }
 
@@ -452,7 +479,9 @@ function renderColumn(
         "club-item";
 
 
-      // Ranking color
+      // ==========================================
+      // RANKING COLOR
+      // ==========================================
 
       element.classList.add(
         getRankClass(
@@ -461,7 +490,9 @@ function renderColumn(
       );
 
 
-      // Flag
+      // ==========================================
+      // NORMAL COUNTRY FLAG
+      // ==========================================
 
       const flag =
         countryCodeToFlag(
@@ -469,9 +500,19 @@ function renderColumn(
         );
 
 
-      // ========================================
+      // ==========================================
+      // CLUB-SPECIFIC IMAGE
+      // ==========================================
+
+      const clubImage =
+        getClubImage(
+          club
+        );
+
+
+      // ==========================================
       // ROW
-      // ========================================
+      // ==========================================
 
       element.innerHTML = `
 
@@ -480,7 +521,17 @@ function renderColumn(
         </div>
 
         <div class="club-flag">
-          ${flag}
+          ${
+            clubImage
+              ? `<img
+                  src="${clubImage}"
+                  class="club-specific-image"
+                  alt="${escapeHTML(
+                    getClubName(club)
+                  )}"
+                >`
+              : flag
+          }
         </div>
 
         <div class="club-name-list">
@@ -558,7 +609,9 @@ function countryCodeToFlag(
       .toUpperCase();
 
 
-  // If already an emoji
+  // ==========================================
+  // IF ALREADY AN EMOJI
+  // ==========================================
 
   if (
     [...code].length > 1 &&
@@ -570,7 +623,9 @@ function countryCodeToFlag(
   }
 
 
-  // Invalid country code
+  // ==========================================
+  // INVALID COUNTRY CODE
+  // ==========================================
 
   if (
     !/^[A-Z]{2}$/.test(code)
@@ -581,7 +636,10 @@ function countryCodeToFlag(
   }
 
 
-  // Convert PH → 🇵🇭
+  // ==========================================
+  // CONVERT COUNTRY CODE → FLAG
+  // Example: PH → 🇵🇭
+  // ==========================================
 
   return code
     .split("")
@@ -633,6 +691,45 @@ function getClubName(
 
 
   return "Unknown Club";
+
+}
+
+
+// ==========================================
+// CLUB-SPECIFIC IMAGE
+// ==========================================
+
+function getClubImage(
+  club
+) {
+
+  const clubName =
+    getClubName(
+      club
+    )
+      .trim()
+      .toLowerCase();
+
+
+  // ==========================================
+  // HAWAII CLUB
+  // ==========================================
+
+  if (
+    clubName === "hawaii club"
+  ) {
+
+    return "images/hawaii.png";
+
+  }
+
+
+  // ==========================================
+  // ALL OTHER CLUBS
+  // USE NORMAL FLAG
+  // ==========================================
+
+  return null;
 
 }
 

@@ -53,6 +53,19 @@ body {
     8px;
 
 }
+.club-specific-image {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  display: block;
+}
+.podium-club-specific-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+}
+
 
 
 .banner-accent {
