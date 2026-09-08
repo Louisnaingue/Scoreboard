@@ -598,7 +598,7 @@ function countryCodeToFlag(
 
   if (!code) {
 
-    return "🌐";
+    return "🏳️";
 
   }
 
@@ -631,7 +631,7 @@ function countryCodeToFlag(
     !/^[A-Z]{2}$/.test(code)
   ) {
 
-    return "🌐";
+    return "🏳️";
 
   }
 
