@@ -751,6 +751,11 @@ function getClubImage(
   ) {
     return "images/esports.png";
   }
+  if (clubName === "badminton club"
+  ) {
+    return "images/badminton.jpeg";
+  }
+
 
 
   // ==========================================
