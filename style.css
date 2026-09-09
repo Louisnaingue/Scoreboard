@@ -1201,4 +1201,53 @@ body {
 
   }
 
+}/* ==========================================
+   NORMAL COUNTRY FLAGS
+   WINDOWS COMPATIBLE
+   ========================================== */
+
+.country-flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
 }
+
+
+/* ==========================================
+   FLAG PLACEHOLDER
+   ========================================== */
+
+.flag-placeholder {
+  font-size: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ==========================================
+   CUSTOM CLUB IMAGES
+   KEEP ORIGINAL SIZE
+   ========================================== */
+
+.club-specific-image {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ==========================================
+   PODIUM CUSTOM IMAGES
+   KEEP ORIGINAL SIZE
+   ========================================== */
+
+   .podium-club-specific-image {
+    width: 700px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+  }

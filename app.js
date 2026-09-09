@@ -365,8 +365,8 @@ function updatePodium(
 
     if (flagElement) {
 
-      flagElement.textContent =
-        "🌐";
+      flagElement.innerHTML =
+        `<span class="flag-placeholder">🏳️</span>`;
 
     }
 
@@ -402,6 +402,10 @@ function updatePodium(
       );
 
 
+    // ==========================================
+    // CUSTOM CLUB IMAGE
+    // ==========================================
+
     if (clubImage) {
 
       flagElement.innerHTML = `
@@ -411,14 +415,20 @@ function updatePodium(
           alt="${escapeHTML(
             getClubName(club)
           )}"
+          onerror="this.style.display='none'"
         >
       `;
 
     }
 
+
+    // ==========================================
+    // NORMAL COUNTRY FLAG
+    // ==========================================
+
     else {
 
-      flagElement.textContent =
+      flagElement.innerHTML =
         countryCodeToFlag(
           club.flag
         );
@@ -492,6 +502,7 @@ function renderColumn(
 
       // ==========================================
       // NORMAL COUNTRY FLAG
+      // WINDOWS-COMPATIBLE IMAGE
       // ==========================================
 
       const flag =
@@ -529,6 +540,7 @@ function renderColumn(
                   alt="${escapeHTML(
                     getClubName(club)
                   )}"
+                  onerror="this.style.display='none'"
                 >`
               : flag
           }
@@ -589,69 +601,80 @@ function getRankClass(rank) {
 
 
 // ==========================================
-// COUNTRY CODE → FLAG
+// COUNTRY CODE → FLAG IMAGE
+// WINDOWS COMPATIBLE
 // ==========================================
 
-function countryCodeToFlag(
-  code
-) {
+function countryCodeToFlag(code) {
+
+  // ==========================================
+  // EMPTY FLAG
+  // ==========================================
 
   if (!code) {
 
-    return "🏳️";
+    return `
+      <span class="flag-placeholder">
+        🏳️
+      </span>
+    `;
 
   }
 
+
+  // ==========================================
+  // CLEAN COUNTRY CODE
+  // ==========================================
 
   code =
     String(code)
       .trim()
-      .toUpperCase();
-
-
-  // ==========================================
-  // IF ALREADY AN EMOJI
-  // ==========================================
-
-  if (
-    [...code].length > 1 &&
-    !/^[A-Z]{2}$/.test(code)
-  ) {
-
-    return code;
-
-  }
+      .toLowerCase();
 
 
   // ==========================================
   // INVALID COUNTRY CODE
   // ==========================================
 
-  if (
-    !/^[A-Z]{2}$/.test(code)
-  ) {
+  if (!/^[a-z]{2}$/.test(code)) {
 
-    return "🏳️";
+    return `
+      <span class="flag-placeholder">
+        🏳️
+      </span>
+    `;
 
   }
 
 
   // ==========================================
-  // CONVERT COUNTRY CODE → FLAG
-  // Example: PH → 🇵🇭
+  // FLAG CDN
+  //
+  // Examples:
+  // ph → Philippines
+  // us → United States
+  // jp → Japan
+  // cn → China
+  // kh → Cambodia
   // ==========================================
 
-  return code
-    .split("")
-    .map(letter => {
+  const flagURL =
+    `https://flagcdn.com/w80/${code}.png`;
 
-      return String.fromCodePoint(
-        127397 +
-        letter.charCodeAt(0)
-      );
 
-    })
-    .join("");
+  // ==========================================
+  // RETURN IMAGE
+  // ==========================================
+
+  return `
+    <img
+      src="${flagURL}"
+      class="country-flag"
+      alt="${code.toUpperCase()} flag"
+      loading="lazy"
+      onerror="this.onerror=null; this.style.display='none';"
+    >
+  `;
 
 }
 
@@ -715,80 +738,226 @@ function getClubImage(
   // HAWAII CLUB
   // ==========================================
 
-  if (clubName === "hawaii club") 
-    {
+  if (
+    clubName === "hawaii club"
+  ) {
+
     return "images/hawaii.png";
-  }
-  if (clubName === "networking club"
-  ) {
-    return "images/networking.jpg";
-  }
-  if (clubName === "pacific studies club"
-  ) {
-    return "images/pacific.jpeg";
-  }
-  if (clubName === "running and hiking club"
-  ) {
-    return "images/running.png";
-  }
-  if (clubName === "marketing society club"
-  ) {
-    return "images/marketing.png";
-  }
-  if (clubName === "latin america club"
-  ) {
-    return "images/latin.png";
-  }
-  if (clubName === "afro world"
-  ) {
-    return "images/afro.png";
-  }
-  if (clubName === "cricket club"
-  ) {
-    return "images/cricket.png";
-  }
-  if (clubName === "esports club"
-  ) {
-    return "images/esports.png";
-  }
-  if (clubName === "badminton club"
-  ) {
-    return "images/badminton.jpeg";
-  }
-  if (clubName === "computer science club"
-  ) {
-    return "images/computer.jpeg";
-  }
-  if (clubName === "professional accounting society club"
-  ) {
-    return "images/pas.jpg";
-  }
-  if (clubName === "investment club"
-  ) {
-    return "images/invest.jpeg";
-  }
-  if (clubName === "peacebuilding club"
-  ) {
-    return "images/peace.png";
-  }
-  if (clubName === "health advocates club"
-  ) {
-    return "images/hac.png";
-  }
-  if (clubName === "pre-dental club"
-  ) {
-    return "images/dental.jpeg";
-  }
-  if (clubName === "cultural experience club"
-  ) {
-    return "images/culture.jpeg";
+
   }
 
+
+  // ==========================================
+  // NETWORKING CLUB
+  // ==========================================
+
+  if (
+    clubName === "networking club"
+  ) {
+
+    return "images/networking.jpg";
+
+  }
+
+
+  // ==========================================
+  // PACIFIC STUDIES CLUB
+  // ==========================================
+
+  if (
+    clubName === "pacific studies club"
+  ) {
+
+    return "images/pacific.jpeg";
+
+  }
+
+
+  // ==========================================
+  // RUNNING AND HIKING CLUB
+  // ==========================================
+
+  if (
+    clubName === "running and hiking club"
+  ) {
+
+    return "images/running.png";
+
+  }
+
+
+  // ==========================================
+  // MARKETING SOCIETY CLUB
+  // ==========================================
+
+  if (
+    clubName === "marketing society club"
+  ) {
+
+    return "images/marketing.png";
+
+  }
+
+
+  // ==========================================
+  // LATIN AMERICA CLUB
+  // ==========================================
+
+  if (
+    clubName === "latin america club"
+  ) {
+
+    return "images/latin.png";
+
+  }
+
+
+  // ==========================================
+  // AFRO WORLD
+  // ==========================================
+
+  if (
+    clubName === "afro world"
+  ) {
+
+    return "images/afro.png";
+
+  }
+
+
+  // ==========================================
+  // CRICKET CLUB
+  // ==========================================
+
+  if (
+    clubName === "cricket club"
+  ) {
+
+    return "images/cricket.png";
+
+  }
+
+
+  // ==========================================
+  // ESPORTS CLUB
+  // ==========================================
+
+  if (
+    clubName === "esports club"
+  ) {
+
+    return "images/esports.png";
+
+  }
+
+
+  // ==========================================
+  // BADMINTON CLUB
+  // ==========================================
+
+  if (
+    clubName === "badminton club"
+  ) {
+
+    return "images/badminton.jpeg";
+
+  }
+
+
+  // ==========================================
+  // COMPUTER SCIENCE CLUB
+  // ==========================================
+
+  if (
+    clubName === "computer science club"
+  ) {
+
+    return "images/computer.jpeg";
+
+  }
+
+
+  // ==========================================
+  // PROFESSIONAL ACCOUNTING SOCIETY CLUB
+  // ==========================================
+
+  if (
+    clubName === "professional accounting society club"
+  ) {
+
+    return "images/pas.jpg";
+
+  }
+
+
+  // ==========================================
+  // INVESTMENT CLUB
+  // ==========================================
+
+  if (
+    clubName === "investment club"
+  ) {
+
+    return "images/invest.jpeg";
+
+  }
+
+
+  // ==========================================
+  // PEACEBUILDING CLUB
+  // ==========================================
+
+  if (
+    clubName === "peacebuilding club"
+  ) {
+
+    return "images/peace.png";
+
+  }
+
+
+  // ==========================================
+  // HEALTH ADVOCATES CLUB
+  // ==========================================
+
+  if (
+    clubName === "health advocates club"
+  ) {
+
+    return "images/hac.png";
+
+  }
+
+
+  // ==========================================
+  // PRE-DENTAL CLUB
+  // ==========================================
+
+  if (
+    clubName === "pre-dental club"
+  ) {
+
+    return "images/dental.jpeg";
+
+  }
+
+
+  // ==========================================
+  // CULTURAL EXPERIENCE CLUB
+  // ==========================================
+
+  if (
+    clubName === "cultural experience club"
+  ) {
+
+    return "images/culture.jpeg";
+
+  }
 
 
   // ==========================================
   // ALL OTHER CLUBS
-  // USE NORMAL FLAG
+  // USE NORMAL COUNTRY FLAG
   // ==========================================
 
   return null;
@@ -932,6 +1101,7 @@ loadLeaderboard();
 // LIVE UPDATE
 // ==========================================
 // Refresh every 10 seconds
+// ==========================================
 
 setInterval(
   loadLeaderboard,
