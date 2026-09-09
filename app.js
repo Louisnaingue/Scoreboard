@@ -743,6 +743,14 @@ function getClubImage(
   ) {
     return "images/afro.png";
   }
+  if (clubName === "cricket club"
+  ) {
+    return "images/cricket.png";
+  }
+  if (clubName === "esports club"
+  ) {
+    return "images/esports.png";
+  }
 
 
   // ==========================================
