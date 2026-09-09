@@ -763,6 +763,22 @@ function getClubImage(
   ) {
     return "images/pas.jpg";
   }
+  if (clubName === "investment club"
+  ) {
+    return "images/invest.jpeg";
+  }
+  if (clubName === "peacebuilding club"
+  ) {
+    return "images/peace.png";
+  }
+  if (clubName === "health advocates club"
+  ) {
+    return "images/hac.png";
+  }
+  if (clubName === "pre-dental club"
+  ) {
+    return "images/dental.jpeg";
+  }
 
 
 
