@@ -715,12 +715,33 @@ function getClubImage(
   // HAWAII CLUB
   // ==========================================
 
-  if (
-    clubName === "hawaii club"
-  ) {
-
+  if (clubName === "hawaii club") 
+    {
     return "images/hawaii.png";
-
+  }
+  if (clubName === "networking club"
+  ) {
+    return "images/networking.jpg";
+  }
+  if (clubName === "pacific studies club"
+  ) {
+    return "images/pacific.jpeg";
+  }
+  if (clubName === "running and hiking club"
+  ) {
+    return "images/running.png";
+  }
+  if (clubName === "marketing society club"
+  ) {
+    return "images/marketing.png";
+  }
+  if (clubName === "latin america club"
+  ) {
+    return "images/latin.png";
+  }
+  if (clubName === "afro world"
+  ) {
+    return "images/afro.png";
   }
 
 
