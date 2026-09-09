@@ -755,6 +755,14 @@ function getClubImage(
   ) {
     return "images/badminton.jpeg";
   }
+  if (clubName === "computer science club"
+  ) {
+    return "images/computer.jpeg";
+  }
+  if (clubName === "professional accounting society club"
+  ) {
+    return "images/pas.jpg";
+  }
 
 
 
