@@ -779,6 +779,10 @@ function getClubImage(
   ) {
     return "images/dental.jpeg";
   }
+  if (clubName === "cultural experience club"
+  ) {
+    return "images/culture.jpeg";
+  }
 
 
 
